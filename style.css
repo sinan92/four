@@ -156,9 +156,9 @@ main .highlights a {
 }
 
 /* Met > wordt een directe kind van het voorgaande element geselecteerd.*/
-main .shopping-gallery>figure,
-main .shop-the-fit>figure,
-main .popular-brands>figure,
+main .shopping-gallery > figure,
+main .shop-the-fit > figure,
+main .popular-brands > figure,
 main .popular-brands p,
 main .popular-brands h3 {
     display: block;
@@ -169,9 +169,9 @@ main .popular-brands h3 {
 wordt zwart, en gaat daarna weer naar transparant.
 Met -webkit-mask: var(--mask); wordt het masker toegepast en doormiddel van -webkit-mask: worden
 oudere versies van de brouwser ondersteund.*/
-main .shopping-gallery>figure a,
-main .shop-the-fit>figure a,
-main .popular-brands>figure a {
+main .shopping-gallery > figure a,
+main .shop-the-fit > figure a,
+main .popular-brands > figure a {
     display: block;
     background: black;
     padding: 1.219rem;
@@ -183,7 +183,7 @@ main .popular-brands>figure a {
     mask: var(--mask);
 }
 
-main .shopping-gallery>figure a:hover {
+main .shopping-gallery > figure a:hover {
     /* background-color: red; */
 }
 
@@ -285,5 +285,4 @@ main .shop-the-fit article footer {
 .highlights {
     background: black;
     color: white;
-
 }
