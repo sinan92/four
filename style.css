@@ -6,6 +6,13 @@ Bron: https://www.digitalocean.com/community/tutorials/how-to-load-and-use-custo
     src: url(fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
+*:focus {
+    outline: none !important;
+    outline-color: initial !important;
+    outline-style: none !important;
+    outline-width: initial !important;
+}
+
 /* Margin betekent extra ruimte om een element.
 Met display: flex; zorg ik er voor dat ik met verschillende flex elementen, de layout kan indelen.
 Flex-direction: zorgt ervoor om de richting in flex te bepalen. Met column zorg ik er voor dat dit verticaal is.
@@ -39,10 +46,18 @@ h4 {
     font-size: 1.25rem;
 }
 
+button {
+    border: inherit;
+    background: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
 /* Padding zorgt voor de ruimte die met de klok mee gaat: boven rechts onder links.
 Met position: fixed; zorg ik ervoor dat de nav blijft op de positie op het moment dat ik scroll.
 Met z-index: 99; wordt het element boven de andere elementen geplaatst.*/
 header nav {
+    box-sizing: border-box; /* Add this line */
     padding: 1rem;
     position: fixed;
     top: 0;
@@ -114,6 +129,7 @@ main section figure section {
     font-weight: bold;
     font-size: 1.125rem;
     text-transform: uppercase;
+    box-sizing: border-box;
 }
 
 main section figure section figcaption {
@@ -125,7 +141,8 @@ main section figure section figcaption {
 wordt zwart, en gaat daarna weer naar transparant.
 Met -webkit-mask: var(--mask); wordt het masker toegepast en doormiddel van -webkit-mask: worden
 oudere versies van de brouwser ondersteund.*/
-main section figure section a {
+main section figure section a,
+main .highlights article figure:last-child a {
     display: block;
     background: white;
     width: 100%;
@@ -151,7 +168,11 @@ main .shopping-gallery p,
 main .highlights h3,
 main .highlights h4,
 main .highlights p,
-main .highlights a {
+main .highlights a,
+main .shop-the-fit h2,
+main .shop-the-fit p,
+main .highlights h3,
+main .highlights article figure:last-child {
     padding: 0 1rem;
 }
 
@@ -171,7 +192,8 @@ Met -webkit-mask: var(--mask); wordt het masker toegepast en doormiddel van -web
 oudere versies van de brouwser ondersteund.*/
 main .shopping-gallery > figure a,
 main .shop-the-fit > figure a,
-main .popular-brands > figure a {
+main .popular-brands > figure a,
+body > footer form section figure a {
     display: block;
     background: black;
     padding: 1.219rem;
@@ -181,10 +203,8 @@ main .popular-brands > figure a {
     --g: #000, #0000 1deg 179deg, #000 180deg;
     --mask: linear-gradient(45deg, #0000 7.07px, #000 0 calc(100% - 7.07px), #0000 0);
     mask: var(--mask);
-}
-
-main .shopping-gallery > figure a:hover {
-    /* background-color: red; */
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 main .shopping-gallery p {
@@ -192,6 +212,7 @@ main .shopping-gallery p {
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.25rem;
+    box-sizing: border-box;
 }
 
 main .shopping-gallery article {
@@ -278,11 +299,351 @@ main .shop-the-fit article header figure {
     mask: var(--mask);
 }
 
-main .shop-the-fit article footer {
-    padding: 0 1rem;
-}
-
 .highlights {
     background: black;
+    padding: 30px 0;
     color: white;
+}
+
+.highlights h3 {
+    margin-bottom: 16px;
+}
+
+.highlights article figure:last-child {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+body > footer {
+    border-top: 1px solid black;
+}
+
+body > footer form {
+    padding: 32px 16px;
+    border-bottom: 1px solid black;
+}
+
+body > footer form h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+body > footer form p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+body > footer form > input:first-of-type {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+body > footer form > span {
+    position: relative;
+    z-index: 0;
+    border: none;
+    width: 100%;
+    max-width: 22px;
+    margin-right: 32px;
+}
+
+body > footer form > span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: #000;
+    --g: #000, #0000 1deg 179deg, #000 180deg;
+    --mask: conic-gradient(from -45deg at top 2.5px right 2.5px, var(--g)) 100% 0 /51% 100% no-repeat,
+        conic-gradient(from -225deg at bottom 2.5px left 2.5px, var(--g)) 0 100%/51% 100% no-repeat;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    clip-path: unset;
+    width: 20px;
+    height: 20px;
+}
+
+body > footer form > span::after {
+    content: "";
+    background-color: transparent;
+    z-index: 1;
+    position: absolute;
+    width: 5.5px;
+    height: 10.5px;
+    border: 2px solid;
+    border-color: transparent white white transparent;
+    border-width: 2px 2px 2px 1px;
+    transform: rotate(45deg);
+    left: 7.5px;
+    top: 3px;
+    box-sizing: inherit;
+}
+
+body > footer form section {
+    margin-top: 25px;
+}
+
+body > footer form section span {
+    display: block;
+    margin: 0 auto;
+    padding: 16px;
+    position: relative;
+    z-index: 0;
+    border: none;
+    width: 100%;
+    max-width: 432px;
+    padding: 15px 20px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+body > footer form section span input {
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: #000 !important;
+    border-bottom: 0 !important;
+    width: 100% !important;
+    color: var(--text-color);
+    max-width: 100%;
+    border: 0px;
+    border-bottom: 1px solid var(--text-color);
+    border-radius: 0;
+}
+
+body > footer form section span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: #000;
+    background: #e9e9e9;
+    clip-path: polygon(
+        0 0,
+        calc(100% - 10px) 0,
+        100% 10px,
+        100% 100%,
+        10px 100%,
+        0 calc(100% - 10px),
+        0 0,
+        1px 1px,
+        1px calc(100% - 10.41px),
+        10.41px calc(100% - 1px),
+        calc(100% - 1px) calc(100% - 1px),
+        calc(100% - 1px) 10.41px,
+        calc(100% - 10.41px) 1px,
+        1px 1px
+    );
+    width: 100%;
+    height: 100%;
+}
+
+body > footer form a {
+    color: inherit;
+}
+
+body > footer figure {
+    margin: 0;
+}
+
+body > footer ul:first-of-type,
+main > section > section:nth-of-type(4) > ul {
+    padding: 0;
+    margin: 0;
+}
+
+body > footer > ul:first-of-type li,
+main > section > section:nth-of-type(4) > ul > li {
+    padding: 24px 16px;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-top: 1px solid #e9e9e9;
+}
+
+/** https://stackoverflow.com/questions/10813581/can-i-replace-the-expand-icon-of-the-details-element **/
+body > footer > ul li details summary,
+main > section > section:nth-of-type(4) > ul > li details summary {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+body > footer > ul li details summary::after,
+main > section > section:nth-of-type(4) > ul > li details summary::after {
+    flex-direction: column;
+    content: "▼";
+    transition: 0.2s;
+}
+
+body > footer > ul li details[open] summary::after,
+main > section > section:nth-of-type(4) > ul li details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+body > footer > ul li details summary::-webkit-details-marker,
+body > footer > ul li details > summary::marker,
+main > section > section:nth-of-type(4) > ul li details > summary::marker,
+main > section > section:nth-of-type(4) > ul li details summary::-webkit-details-marker {
+    display: none;
+}
+
+body > footer > figcaption {
+    text-align: center;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+body > footer > figure {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0;
+    border-bottom: 1px solid black;
+}
+
+body > footer > figure img {
+    width: 25px;
+}
+
+body > footer nav {
+    padding: 24px 16px;
+}
+
+body > footer nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+body > footer nav ul li {
+    display: inline-block;
+    padding-right: 22px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/** Details Pagina **/
+main > section > section:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 16px;
+    padding-top: 24px;
+}
+
+main > section > section:first-of-type section:first-of-type {
+    padding-right: 10px;
+}
+
+main > section > section:first-of-type section:nth-of-type(2) p:nth-child(2) {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    color: #000000;
+    opacity: 0.3;
+    display: block;
+    margin-top: 8px;
+}
+
+main > section > section:first-of-type section:nth-of-type(2) p:first-child {
+    font-size: 22px;
+    line-height: 27px;
+    font-weight: 400;
+}
+
+main > section > section:nth-of-type(2) section {
+    display: inline-block;
+    padding: 24px 16px;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-top: 1px solid #e9e9e9;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main > section > section:nth-of-type(2) section p {
+    display: inline-block;
+}
+
+main > section > section:nth-of-type(2) section p:first-child {
+    width: 30%;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+main > section > section:nth-of-type(2) section p:nth-child(2) {
+    width: 65%;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 400;
+}
+
+main > section > section:nth-of-type(3) {
+    padding: 0 16px;
+}
+
+main > section > section:nth-of-type(3) ul {
+    margin: 0;
+    padding: 0 16px;
+    list-style-type: square;
+}
+
+main > section > section:nth-of-type(3) ul li {
+    line-height: 2rem;
+    font-size: 14px;
+}
+
+main > section > section:nth-of-type(4) ul li:last-of-type {
+    border-bottom: 1px solid #e9e9e9;
+}
+
+main > section > section:nth-of-type(4) ul li {
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+main > section > section:nth-of-type(4) ul li details p {
+    text-transform: none;
+}
+
+main > section > section:nth-of-type(4) ul li details summary::after {
+    content: "+";
+}
+
+main > section > section:nth-of-type(4) ul li details[open] summary::after {
+    content: "-";
+}
+
+main > section > section:nth-of-type(5) {
+    padding: 80px 0;
+}
+
+main > section > section:nth-of-type(5) > h2 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    text-transform: capitalize;
+    padding-left: 24px;
+}
+
+main > section > section:nth-of-type(5) article > *:not(img) {
+    padding-left: 24px;
 }
