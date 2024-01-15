@@ -1,10 +1,29 @@
 :root {
+    --background-color: var(--light);
+    --inverted-background-color: var(--dark);
+    --text-color: var(--dark);
+    --inverted-text-color: var(--light);
     --dark: #000;
     --light: #fff;
     --light-gray: #e9e9e9;
     /** Kleur code: https://encycolorpedia.com/2e3134 **/
     --medium-gray: #d8d9da;
     --dark-gray: #252729;
+}
+
+/** Light/Dark mode */
+body.light-mode {
+    --background-color: var(--light);
+    --inverted-background-color: var(--dark);
+    --text-color: var(--dark);
+    --inverted-text-color: var(--light);
+}
+
+body.dark-mode {
+    --background-color: var(--dark);
+    --inverted-background-color: var(--light);
+    --text-color: var(--light);
+    --inverted-text-color: var(--dark);
 }
 
 /* Ik heb de custom font moeten importeren die de website gebruikt.
@@ -159,7 +178,7 @@ main .highlights article figure:last-child a {
     max-width: 14.375rem;
     padding: 16.5px;
     text-align: center;
-    --mask: linear-gradient(45deg, var(--dark) 7.07px, var(--dark) 0 calc(100% - 7.07px), var(--dark) 0);
+    --mask: linear-gradient(45deg, #0000 7.07px, var(--dark) 0 calc(100% - 7.07px), #0000 0);
     -webkit-mask: var(--mask);
     mask: var(--mask);
     color: var(--dark);
@@ -211,13 +230,13 @@ main .shop-the-fit > figure a,
 main .popular-brands > figure a,
 body > footer form section figure a {
     display: block;
-    background: var(--dark);
+    background: var(--inverted-background-color);
     padding: 1.219rem;
-    color: var(--light);
+    color: var(--inverted-text-color);
     text-align: center;
     text-decoration: none;
-    --g: var(--dark), var(--dark) 1deg 179deg, var(--dark) 180deg;
-    --mask: linear-gradient(45deg, var(--dark) 7.07px, var(--dark) 0 calc(100% - 7.07px), var(--dark) 0);
+    --g: var(--text-color), #0000 1deg 179deg, var(--text-color) 180deg;
+    --mask: linear-gradient(45deg, #0000 7.07px, var(--text-color) 0 calc(100% - 7.07px), #0000 0);
     mask: var(--mask);
     text-transform: uppercase;
     font-weight: 700;
@@ -250,7 +269,7 @@ main .shopping-gallery article a button {
 }
 
 main .shopping-gallery article a {
-    color: var(--dark);
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -281,8 +300,8 @@ main .shopping-gallery article a figure {
     color: var(--light);
     font-size: 0.688rem;
     line-height: 0.938rem;
-    --g: var(--dark), var(--dark) 1deg 179deg, var(--dark) 180deg;
-    --mask: linear-gradient(45deg, var(--dark) 7.07px, var(--dark) 0 calc(100% - 7.07px), var(--dark) 0);
+    --g: var(--dark), #0000 1deg 179deg, var(--dark) 180deg;
+    --mask: linear-gradient(45deg, #0000 7.07px, var(--dark) 0 calc(100% - 7.07px), #0000 0);
     -webkit-mask: var(--mask);
 }
 
@@ -435,6 +454,7 @@ body > footer form section span {
 }
 
 body > footer form section span input {
+    background-color: var(--background-color);
     font-weight: 400 !important;
     font-size: 14px !important;
     line-height: 20px !important;
@@ -506,7 +526,7 @@ body > footer > ul:first-of-type li a {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: var(--dark);
+    color: var(--text-color);
 }
 
 body > footer > ul:first-of-type li details ul {
