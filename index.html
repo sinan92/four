@@ -5,8 +5,14 @@
     <meta charset="UTF-8">
     <meta name="author" content="jouw naam">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>FOUR Amsterdam</title>
+
     <link href="./css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+
     <link rel="icon" type="image/svg+xml" href="images/four_favicon.png">
 </head>
 
@@ -54,33 +60,45 @@
                 </section>
             </figure>
         </section>
+
         <section class="shopping-gallery">
             <h1>Four</h1>
             <p>Be part of the family.</p>
-            <article>
-                <a href="detail.html">
-                    <img src="images/amiri_jas_voorkant.webp" alt="Amiri jas">
-                    <figure>New</figure>
-                    <button></button>
-                    <section>
-                        <h2>Amiri</h2>
-                        <p>DJ Premier Varsity Jacket Black</p>
-                        <p class="product-price">€1.571,40</p>
-                    </section>
-                </a>
-            </article>
-            <article>
-                <a href="detail.html">
-                    <img src="images/amiri_broek.webp" alt="Amiri broek">
-                    <figure>New</figure>
-                    <button></button>
-                    <section>
-                        <h2>Amiri</h2>
-                        <p>Distressed Lose-fit Jeans Faded Indigo</p>
-                        <p class="product-price">€833,40</p>
-                    </section>
-                </a>
-            </article>
+
+            <!-- https://swiperjs.com/demos#slides-per-view -->
+            <div class="swiper swiper-standard">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article>
+                            <a href="detail.html">
+                                <img src="images/amiri_jas_voorkant.webp" alt="Amiri jas">
+                                <figure>New</figure>
+                                <button></button>
+                                <section>
+                                    <h2>Amiri</h2>
+                                    <p>DJ Premier Varsity Jacket Black</p>
+                                    <p class="product-price">€1.571,40</p>
+                                </section>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <a href="detail.html">
+                                <img src="images/amiri_broek.webp" alt="Amiri broek">
+                                <figure>New</figure>
+                                <button></button>
+                                <section>
+                                    <h2>Amiri</h2>
+                                    <p>Distressed Lose-fit Jeans Faded Indigo</p>
+                                    <p class="product-price">€833,40</p>
+                                </section>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
             <figure>
                 <a href="#">Shop Four</a>
             </figure>
@@ -99,26 +117,36 @@
         <section class="shopping-gallery">
             <h2>Gifts</h2>
             <p>Get ready for the festive season.</p>
-            <article>
-                <a href="detail.html">
-                    <img src="images/four_fles_zwart.webp" alt="Zwarte Four fles">
-                    <button></button>
-                    <section>
-                        <h2>Four</h2>
-                        <p>Water Bottle Black</p>
-                        <p>€19,00</p>
-                    </section>
-                </a>
-            </article>
-            <article>
-                <img src="images/four_fles_roze.webp" alt="Roze Four fles">
-                <button></button>
-                <section>
-                    <h2>Four</h2>
-                    <p>Water Bottle Pink</p>
-                    <p>€19,00</p>
-                </section>
-            </article>
+
+            <!-- https://swiperjs.com/demos#slides-per-view -->
+            <div class="swiper swiper-standard">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article>
+                            <a href="detail.html">
+                                <img src="images/four_fles_zwart.webp" alt="Zwarte Four fles">
+                                <button></button>
+                                <section>
+                                    <h2>Four</h2>
+                                    <p>Water Bottle Black</p>
+                                    <p>€19,00</p>
+                                </section>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <img src="images/four_fles_roze.webp" alt="Roze Four fles">
+                            <button></button>
+                            <section>
+                                <h2>Four</h2>
+                                <p>Water Bottle Pink</p>
+                                <p>€19,00</p>
+                            </section>
+                        </article>
+                    </div>
+                </div>
+            </div>
             <figure>
                 <a href="#">Shop Four</a>
             </figure>
@@ -129,58 +157,107 @@
         <section class="shop-the-fit">
             <h2>Shop the fit</h2>
             <p>Discover selected outfits</p>
-            <article>
-                <header>
-                    <figure>New</figure>
-                    <button></button>
-                </header>
-                <footer>
-                    <h2>Adidas</h2>
-                    <p>Adimatic Suede Sneakers Olive Green</p>
-                    <p>€71,40</p>
-                </footer>
-                <img src="images/adidas_shoen.webp" alt="Adidas schoen groen">
-            </article>
-            <article>
-                <header>
-                    <button></button>
-                </header>
-                <footer>
-                    <h2>Adidas</h2>
-                    <p>NMD S1 Sneakers Silver Metallic</p>
-                    <p>€107,40</p>
-                </footer>
-                <img src="images/adidias_shoen_2.webp" alt="Adidas schoen wit">
-            </article>
+
+            <!-- https://swiperjs.com/demos#slides-per-view -->
+            <div class="swiper swiper-standard">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article>
+                            <header>
+                                <figure>New</figure>
+                                <button></button>
+                            </header>
+                            <footer>
+                                <h2>Adidas</h2>
+                                <p>Adimatic Suede Sneakers Olive Green</p>
+                                <p>€71,40</p>
+                            </footer>
+                            <img src="images/adidas_shoen.webp" alt="Adidas schoen groen">
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <header>
+                                <button></button>
+                            </header>
+                            <footer>
+                                <h2>Adidas</h2>
+                                <p>NMD S1 Sneakers Silver Metallic</p>
+                                <p>€107,40</p>
+                            </footer>
+                            <img src="images/adidias_shoen_2.webp" alt="Adidas schoen wit">
+                        </article>
+                    </div>
+                </div>
+            </div>
             <figure>
                 <a href="#">Shop the fit</a>
             </figure>
         </section>
         <section class="popular-brands">
-            <figure>
-                <img src="images/rhude_jas.webp" alt="Rhude jas">
-            </figure>
+
+            <!-- https://swiperjs.com/demos#slides-per-view -->
+            <div class="swiper swiper-popular">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="images/rhude_jas.webp" alt="Rhude jas">
+                        </figure>
+                    </div>
+                    <div class="swiper-slide">
+                        <figure>
+                            <img src="images/rhude_jas.webp" alt="Rhude jas">
+                        </figure>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
             <h3>Popular brands</h3>
             <p>Browse through a selection of our most popular brands and upgrade your style today.</p>
             <figure>
                 <a href="#">View all brands</a>
             </figure>
+            <div class="swiper-pagination"></div>
         </section>
         <section class="highlights">
             <h3>Highlights</h3>
-            <article>
-                <figure>
-                    <img src="images/family_four.webp" alt="Four family">
-                </figure>
-                <h4>Four the family</h4>
-                <p>
-                    Meet Claire, founder of Iconic Studios, and her husband, Wichard and thei lovely daughters Julie &
-                    LouLou.
-                </p>
-                <figure>
-                    <a href="#">Read now</a>
-                </figure>
-            </article>
+            <!-- https://swiperjs.com/demos#slides-per-view -->
+            <div class="swiper swiper-highlights">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <article>
+                            <figure>
+                                <img src="images/family_four.webp" alt="Four family">
+                            </figure>
+                            <h4>Four the family</h4>
+                            <p>
+                                Meet Claire, founder of Iconic Studios, and her husband, Wichard and thei lovely daughters Julie &
+                                LouLou.
+                            </p>
+                            <figure>
+                                <a href="#">Read now</a>
+                            </figure>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article>
+                            <figure>
+                                <img src="images/family_four.webp" alt="Four family">
+                            </figure>
+                            <h4>Four the family</h4>
+                            <p>
+                                Meet Claire, founder of Iconic Studios, and her husband, Wichard and thei lovely daughters Julie &
+                                LouLou.
+                            </p>
+                            <figure>
+                                <a href="#">Read now</a>
+                            </figure>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
         </section>
         <section class="popular-brands">
             <figure>
@@ -207,11 +284,13 @@
         <form action="">
             <h2>Be part of the family.</h2>
             <p>Sign up for our newsletter and receive 10% discount on your first order!</p>
-            <input type="checkbox" id="privacy_policy_check" name="privacy_policy_check">
-            <span></span>
             <label for="privacy_policy_check">
-                I accept the
-                <a href="#">Privacy policy</a>
+                <input type="checkbox" id="privacy_policy_check" name="privacy_policy_check">
+                <span></span>
+                <span>
+                    I accept the
+                    <a href="#">Privacy policy</a>
+                </span>
             </label>
             <section>
                 <span>
@@ -362,6 +441,7 @@
     </footer>
     <script defer src="script.js"></script>
     <script src="https://kit.fontawesome.com/34344b8697.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
