@@ -62,12 +62,17 @@ h4 {
     text-transform: uppercase;
 }
 
+main > section > section > section > h1 {
+    font-weight: normal;
+}
+
 h2 {
     font-size: 1rem;
 }
 
-h3 {
+h3, main > section > section > section > p {
     font-size: 1.375rem;
+    font-weight: bold;
 }
 
 h4 {
@@ -79,6 +84,14 @@ button {
     background: inherit;
     cursor: pointer;
     padding: 0;
+}
+
+#increase-font-size i{
+    font-size: 1.4rem;
+}
+
+#decrease-font-size i{
+    font-size: 0.8rem;
 }
 
 /* Padding zorgt voor de ruimte die met de klok mee gaat: boven rechts onder links.
@@ -162,7 +175,7 @@ main section figure section {
     box-sizing: border-box;
 }
 
-main section figure section figcaption {
+main section:nth-of-type(1) figure section p {
     margin-bottom: 1.25rem;
     color: var(--light);
 }
@@ -278,7 +291,7 @@ main .shopping-gallery article a section {
     padding: 1rem;
 }
 
-main .shopping-gallery article a p {
+main .shopping-gallery article a p, main .shop-the-fit article footer p {
     font-size: 0.75rem;
     text-transform: capitalize;
 }
@@ -550,6 +563,10 @@ main > section > section:nth-of-type(4) > ul {
     margin: 0;
 }
 
+main > section > section > section > p {
+
+}
+
 body > footer > ul:first-of-type li,
 main > section > section:nth-of-type(4) > ul > li {
     padding: 24px 16px;
@@ -604,7 +621,7 @@ main > section > section:nth-of-type(4) > ul li details summary::-webkit-details
     display: none;
 }
 
-body > footer > figcaption {
+body > footer > p {
     text-align: center;
     font-size: 14px;
     text-transform: capitalize;

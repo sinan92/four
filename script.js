@@ -1,11 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
     const body = document.body;
     const modeToggle = document.getElementById('modeToggle');
+    const increaseFontSize = document.getElementById('increase-font-size');
+    const decreaseFontSize = document.getElementById('decrease-font-size');
 
     modeToggle.addEventListener('click', function () {
         body.classList.toggle('light-mode');
         body.classList.toggle('dark-mode');
     });
+
+    increaseFontSize.addEventListener('click', function () {
+        changeFontSize("increase");
+    })
+    decreaseFontSize.addEventListener('click', function () {
+        changeFontSize('decrease');
+    })
 
     new Swiper(".swiper-standard", {
         slidesPerView: 1.5,
@@ -38,3 +47,19 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 });
+
+
+function changeFontSize(action) {
+    const elements = document.querySelectorAll('p, a, h1, h2, h3');
+
+    const step = 2;
+
+    elements.forEach(element => {
+        const currentSize = parseInt(window.getComputedStyle(elements[0], null).getPropertyValue('font-size'));
+        if (action === 'increase') {
+            element.style.fontSize = currentSize + step + 'px';
+        } else if (action === 'decrease') {
+            element.style.fontSize = Math.max(currentSize - step, 10) + 'px';
+        }
+    });
+}
